@@ -1,7 +1,8 @@
-# Serve tensorflow model with gRPC.
+# Serve model with gRPC.
 
 This is the repo to demostrate how to serve machine learning models to clients with gRPC. 
 The task is process the video with the opencv and return the processed frames to client. 
+In the future I will add tensorflow model to do the style transfor or object detection for each frame.
 
 
 
@@ -48,7 +49,7 @@ python -m grpc_tools.protoc -I protos --python_out=. --grpc_python_out=. protos/
 Second step is to use the generated file to implement the service. the client stream the video file to the server. then the server process the frame with opencv and send back the processed frames using streaming. 
 
 ``` 
-python imageTest_server.py start & 
+python imageTest_server.py & 
 ```
 
 Start the client
